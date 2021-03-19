@@ -18,28 +18,50 @@ class DonutShop {
     }
 
     addAutoClick() {
-        if (this._donutCount >= this._autoClickCost 
-            // && this._autoClickCount == 0   // Do I need?
-            ){
+        if (this._donutCount >= this._autoClickCost){
             this._donutCount -= this._autoClickCost;
             this._autoClickCount++;
             this._autoClickCost *= 1.1;
         }
-        else {
-            alert("Make more donuts!");
-        }
+        // else {
+        //     alert("Make more donuts!");
+        // }
+    }
+
+    getAutoClickCount() {
+        return Math.round(this._autoClickCount);
+    }
+
+    getAutoClickCost() {
+        return this._autoClickCost;
     }
 
     addClickMultiplier() {
         if (this._donutCount >= this._multiCost) {
             this._donutCount -= this._multiCost;
             this._multiCount++;
-            this._multiCost *= 1.2;
+            this._multiCost *= 1.1;
         }
-        else {
-            alert("Make more donuts!");
+        // else {
+        //     alert("Make more donuts!");
+        // }
+    }
+
+    activateClickMultiplier() {
+        if (this._donutCount > 0) {
+            this._donutCount += (Math.pow(1.2, this._multiCount));
         }
     }
+
+    getMultiClickCount() {
+        return this._multiCount;
+    }
+
+    getMultiClickCost() {
+        return this._multiCost;
+    }
+
+
 
     
 
