@@ -24,10 +24,17 @@ class DonutShop {
             this._autoClickCount++;
             this._autoClickCost *= 1.1;
         }
-        // else {
-        //     alert("Make more donuts!");
-        // }
+        else {
+            alert("Make more donuts!");
+        }
     }
+
+    activateAutoClick() {
+        for (let i = 0; i < this._autoClickCount; i++){
+            this.click();
+        };
+        return this._donutCount += 1 * this._autoClickCount;
+    };
 
     getAutoClickCount() {
         return Math.round(this._autoClickCount);
@@ -44,9 +51,9 @@ class DonutShop {
             this._multiCost *= 1.1;
             this._donutValue *= 1.2;
         }
-        // else {
-        //     alert("Make more donuts!");
-        // }
+        else {
+            alert("Make more donuts!");
+        }
     }
 
     activateClickMultiplier() {
@@ -61,6 +68,10 @@ class DonutShop {
 
     getMultiClickCost() {
         return this._multiCost;
+    }
+
+    getDonutValue() {
+        return this._donutValue;
     }
 
 
