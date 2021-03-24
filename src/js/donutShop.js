@@ -24,10 +24,17 @@ class DonutShop {
             this._autoClickCount++;
             this._autoClickCost *= 1.1;
         }
-        // else {
-        //     alert("Make more donuts!");
-        // }
+        else {
+            alert("Make more donuts!");
+        }
     }
+
+    activateAutoClick() {
+        // for (let i = 0; i < this._autoClickCount; i++){
+        //     this.click();
+        // };
+       this._donutCount += this._donutValue * this._autoClickCount;
+    };
 
     getAutoClickCount() {
         return Math.round(this._autoClickCount);
@@ -41,19 +48,19 @@ class DonutShop {
         if (this._donutCount >= this._multiCost) {
             this._donutCount -= this._multiCost;
             this._multiCount++;
-            this._multiCost *= 1.1;
-            this._donutValue *= 1.2;
+            this._multiCost *= 1.2;
+            this._donutValue *= 1.1;
         }
-        // else {
-        //     alert("Make more donuts!");
-        // }
+        else {
+            alert("Make more donuts!");
+        }
     }
 
-    activateClickMultiplier() {
-        if (this._donutCount > 0) {
-            this._donutCount += (Math.pow(this._donutValue, this._multiCount));
-        }
-    }
+    // activateClickMultiplier() {
+    //     if (this._donutCount > 0) {
+    //         this._donutCount += (Math.pow(this._donutValue, this._multiCount));
+    //     }
+    // }
 
     getMultiClickCount() {
         return this._multiCount;
@@ -61,6 +68,10 @@ class DonutShop {
 
     getMultiClickCost() {
         return this._multiCost;
+    }
+
+    getDonutValue() {
+        return this._donutValue;
     }
 
 
