@@ -1,0 +1,21 @@
+body {
+    background-color: #76317a;
+    background-image: url(/src/images/clean-gray-paper.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Helvetica, sans-serif;
+    margin: 0px auto;
+}
+
+#clickBtn {
+    outline: none;
+}
+
+
+
+#clickBtn:hover {
+    size:25px;
+        
+}
+

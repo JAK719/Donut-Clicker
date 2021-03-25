@@ -23,8 +23,6 @@ buyMultiplier.addEventListener('click', function(){
 
 buyAutoClick.addEventListener('click', function(){
     donutMaker.addAutoClick();
-    
-   
     updateDom();
 });
 
@@ -49,4 +47,7 @@ function UpdateButtons(){
     multButton.disabled = !(donutMaker.getTotalDonuts() >= donutMaker.getMultiplierCost());
 }
 
-document.getbuttonbyid("multiplier button").innertext = "Buy For: " + donutmaker.getMultClickCost();
+// document.getElementById("multiBtn").innertext = "Buy For: " + donutmaker.getMultClickCost();
+
+
+// document.querySelector(".donut-count").innerHTML = "Donuts: " + donutMaker.getDonutCount();
