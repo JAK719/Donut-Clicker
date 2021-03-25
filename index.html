@@ -9,14 +9,19 @@
 <body>
     <div class="container">
         <div class="anchor"></div>
+        <nav>
+            <button id="modalBtn">Open Modal</button>
+
+            <div id="myModal" class="modal">
+
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some Text in the modal</p>
+                </div>
+            </div>
+        </nav>
             <header class="header">
-                
-                
-                 
-                
-                
-                
-                
+          
                 <h1>Fred The Baker's Donut Shop</h1>
 
             </header>
@@ -24,36 +29,30 @@
             <main class ="main">
                 <section class="donut-clicker">
                     <div class="clicker">
-                        <ul>
-                            <p>Donuts: </p>
+                            <p>Donuts: <span id="donut-count">0</span></p>
                             <p class="donut-count"></p>
-                            <p>donuts per click...</p>
-                            <p class="donut-value"></p>
-                        </ul>
-                        <input type="image" src="src/images/PinkDonut.png" class="donutBtn" id="clickBtn" />
+                            <p>Donuts per click: <span id="donut-value">1</span></p>
+                            <p>Donuts Per Second: <span id="dPs">0</span> </p>
+                        <input type="image" src="src/images/PinkDonut.png" class="donutBtns" id="clickBtn" />
                     </div>
                 </section>
                     <container class="addons">
                         <section class="addonsDisplay">
                             <div id="multidDsplay">
-                                <p>Multipliers: </p>
-                                <p class ="multi-count"></p>
-                                <p>Multiplier Cost: </p>
-                                <p class="multi-cost"></p>
+                                <p>Multipliers: <span id="multi-count">0</span> </p>
+                                <!-- <p class ="multi-count"></p> -->
+                                <p>Multiplier Cost: <span id="multi-cost">0</span> </p>
+                               
+                                <button class="buyBtns" id="multiBtn" disabled>Buy Multiplier!</button>
                             </div>  
                             <div id="autoDisplay">
-                                <p>Auto-Clickers: </p>
-                                <p class="auto-count"></p>
-                                <p>Auto-Clicker Cost: </p>
-                                <p class="auto-cost"></p>
+                                <p>Auto-Clickers: <span id="auto-count">0</span></p>
+                                <p>Auto-Clicker Cost: <span id="auto-cost">0</span></p>
+                                <button class ="buyBtns" id="autoBtn" disabled>Buy Auto-Clicker!</button>
                             </div>
                         </section>
-                    
-                    <div class="Btns">
-                        <button class="buyBtns" id="multiBtn">Buy Multiplier!</button>
-                        <button class ="buyBtns" id="autoBtn">Buy Auto-Clicker!</button>
-                    </div>
-                </container>
+                        <button class="buyBtns" id="resetBtn">Reset The Game!</button>
+                     </container>
 
 
             </main>
