@@ -16,6 +16,36 @@ body {
 
 #clickBtn:hover {
     size:25px;
-        
 }
+
+.buyBtns {
+    display: flex;
+    flex-direction: column;
+}
+
+.buyBtns {
+    border: 1px solid;
+    border-color: darkslateblue;
+    border-radius: 4px;
+    background-color:azure;
+    background-image: url(/images/grey-sandbag.png);
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    overflow: hidden;
+}
+    .buyBtns:hover {
+       color: blue;
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .buyBtns::before {
+       position: absolute;
+       left: 0;
+       width: 100%;
+       background: #3498db;
+       z-index: -1;
+       transition: 0.8s;
+    }
 
