@@ -5,7 +5,7 @@ class DonutShop {
         this._multiCount = 0;
         this._multiCost = 10
         this._autoClickCount = 0;
-        this._autoClickCost = 20;
+        this._autoClickCost = 100;
         this._donutsPerSecond = 0;
     }
 
@@ -33,11 +33,11 @@ class DonutShop {
     };
 
     getAutoClickCount() {
-        return Math.round(this._autoClickCount);
+        return (this._autoClickCount);
     }
 
     getAutoClickCost() {
-        return this._autoClickCost;
+        return Math.round((this._autoClickCost + Number.EPSILON) * 100) / 100;
     }
 
     addClickMultiplier() {
@@ -53,15 +53,15 @@ class DonutShop {
     }
 
     getMultiClickCount() {
-        return this._multiCount;
+        return (this._multiCount);
     }
 
     getMultiClickCost() {
-        return this._multiCost;
+        return Math.round((this._multiCost + Number.EPSILON) * 100) / 100;
     }
 
     getDonutValue() {
-        return this._donutValue;
+        return Math.round((this._donutValue + Number.EPSILON) * 100) / 100;
     }
 
     resetStats() {

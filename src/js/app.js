@@ -61,27 +61,28 @@ function DisplayDonutsPerSecond(){
     updateDom();
 }
 
-var modal = document.getElementById("myModal");
+//Opening Model
 
-var btn = document.getElementById("modalBtn")
+var modalBtns = document.querySelectorAll('.modal-open');
 
-var span = document.getElementsByClassName("close")[0];
+modalBtns.forEach(function(btn){
+    btn.onclick = function() {
+        var modal = btn.getAttribute('data-modal');
 
-btn.onclick = function(){
-    modal.style.display = "block";
+        document.getElementById(modal).style.display = "block";
+    };
+});
+
+var closeBtn = document.querySelectorAll('.modal-close');
+
+closeBtn.forEach(function(btn){
+    btn.onclick = function(){
+        var modal = btn.closest(".modal").style.display = 'none';
+    };
+});
+
+window.onclick = function(e){
+    if(e.target.className == 'modal'){
+        e.target.style.display = 'none';
     }
-
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-// document.getElementById("multiBtn").innertext = "Buy For: " + donutmaker.getMultClickCost();
-
-
-// document.querySelector(".donut-count").innerHTML = "Donuts: " + donutMaker.getDonutCount();
+}

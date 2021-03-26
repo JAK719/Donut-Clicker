@@ -5,19 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason's Donut Shop</title>
     <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
 </head>
 <body>
     <div class="container">
         <div class="anchor"></div>
         <nav>
-            <button id="modalBtn">Open Modal</button>
 
-            <div id="myModal" class="modal">
+            <!--Modal Buttons-->
+            <button class="modal-open"
+            data-modal="aboutFred">Meet Fred</button>
+            <button class="modal-open"
+            data-modal="aboutMe">Meet Me</button>
+            <button class="modal-open"
+            data-modal="cookie">Cookie Clicker</button>
 
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Some Text in the modal</p>
+            <!--Modals-->
+            <div class="modal" id="aboutFred">
+                <div class="modal-content"> 
+                    <div class="modal-header">Meet Fred</div>
+                    <div class="model-body">Adipisicing duis id nostrud ex veniam.</div>
+                    <div class="modal-footer"><button class="link modal-close">Close Modal</button></div>
                 </div>
+            </div>
+
+            <div class="modal" id="aboutMe">
+                <div class="modal-content"> 
+                    <div class="modal-header">Meet Me</div>
+                    <div class="model-body">Adipisicing duis id nostrud ex veniam.</div>
+                    <div class="modal-footer"><button class="link modal-close">Close Modal</button></div>
+                </div>
+            </div>
+
+            <div class="modal" id="cookie">
+                <div class="modal-content"> 
+                    <div class="modal-header">Cookie Clicker</div>
+                    <div class="model-body">The Inspiration</div>
+                    <div class="modal-footer"><button class="link modal-close">Close Modal</button></div>
+                </div>
+            </div>
+
+            <div class="reset">
+                <button id="resetBtn">Reset The Game!</button>
             </div>
         </nav>
             <header class="header">
@@ -29,10 +59,11 @@
             <main class ="main">
                 <section class="donut-clicker">
                     <div class="clicker">
+                        <div class="stats">
                             <p>Donuts: <span id="donut-count">0</span></p>
-                            <p class="donut-count"></p>
                             <p>Donuts per click: <span id="donut-value">1</span></p>
-                            <p>Donuts Per Second: <span id="dPs">0</span> </p>
+                            <!-- <p>Donuts Per Second: <span id="dPs">0</span> </p> -->
+                        </div>
                         <input type="image" src="src/images/PinkDonut.png" class="donutBtns" id="clickBtn" />
                     </div>
                 </section>
@@ -40,9 +71,7 @@
                         <section class="addonsDisplay">
                             <div id="multidDsplay">
                                 <p>Multipliers: <span id="multi-count">0</span> </p>
-                                <!-- <p class ="multi-count"></p> -->
                                 <p>Multiplier Cost: <span id="multi-cost">0</span> </p>
-                               
                                 <button class="buyBtns" id="multiBtn" disabled>Buy Multiplier!</button>
                             </div>  
                             <div id="autoDisplay">
@@ -51,7 +80,6 @@
                                 <button class ="buyBtns" id="autoBtn" disabled>Buy Auto-Clicker!</button>
                             </div>
                         </section>
-                        <button class="buyBtns" id="resetBtn">Reset The Game!</button>
                      </container>
 
 
