@@ -144,7 +144,7 @@ body {
         outline: none;
         border: solid 1px;
         color:#9bcdee;
-        font-weight: 550;
+        font-weight: 500;
     }
 
     #resetBtn:hover {
@@ -155,7 +155,7 @@ body {
     .modal-open {
         background-color:#CD6BED;
         color:#9bcdee;
-        font-weight: 550;
+        font-weight: 500;
         padding: 10px 20px;
         font-size: 15px;
         cursor: pointer;
