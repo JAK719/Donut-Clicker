@@ -23,9 +23,9 @@ class DonutShop {
             this._autoClickCount++;
             this._autoClickCost *= 1.1;
         }
-        else {
-            alert("Make more donuts!");
-        }
+        // else {
+        //     alert("Make more donuts!");
+        // }
     }
 
     activateAutoClick() {
@@ -40,6 +40,8 @@ class DonutShop {
         return Math.round((this._autoClickCost + Number.EPSILON) * 100) / 100;
     }
 
+
+    //Swapped cost & multiplier increment
     addClickMultiplier() {
         if (this._donutCount >= this._multiCost) {
             this._donutCount -= this._multiCost;
@@ -47,9 +49,9 @@ class DonutShop {
             this._multiCost *= 1.2;
             this._donutValue *= 1.1;
         }
-        else {
-            alert("Make more donuts!");
-        }
+        // else {
+        //     alert("Make more donuts!");
+        // }
     }
 
     getMultiClickCount() {
@@ -73,10 +75,12 @@ class DonutShop {
         this._autoClickCost = 100;
     }
 
-    getDonutsPerSecond() {
-        this._donutsPerSecond = this._donutValue *= this._autoClickCost;
-        return this._donutsPerSecond;
-    }
+
+    //Not sure how to implement
+    // getDonutsPerSecond() {
+    //     this._donutsPerSecond = this._donutValue *= this._autoClickCost;
+    //     return this._donutsPerSecond;
+    // }
 
 
 

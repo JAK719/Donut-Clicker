@@ -8,7 +8,9 @@ const autoCount = document.getElementById("auto-count");
 const autoCost = document.getElementById("auto-cost");
 const donutValue = document.getElementById("donut-value");
 const resetGame = document.getElementById("resetBtn");
-const donutsPerSecond = document.getElementById("dPs");
+
+//Can't figure out how to implement
+// const donutsPerSecond = document.getElementById("DpS");
 
 
 var donutMaker = new DonutShop();
@@ -40,6 +42,7 @@ function autoClick(){
 };
 
 
+
 function updateDom(){
     donutCount.innerText = Math.round(donutMaker.getDonutCount());
     multiCount.innerText = donutMaker.getMultiClickCount();
@@ -56,10 +59,7 @@ function UpdateButtons(){
 
 }
 
-function DisplayDonutsPerSecond(){
-    donutsPerSecond = donutValue *= autoCount;
-    updateDom();
-}
+
 
 //Opening Model
 
@@ -86,3 +86,5 @@ window.onclick = function(e){
         e.target.style.display = 'none';
     }
 }
+
+ 
