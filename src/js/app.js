@@ -1,12 +1,16 @@
-const donutCount = document.querySelector(".donut-count");
+const donutCount = document.getElementById("donut-count");
 const makeDonuts = document.getElementById("clickBtn");
 const buyMultiplier = document.getElementById("multiBtn");
-const multiCount = document.querySelector(".multi-count");
-const multiCost = document.querySelector(".multi-cost");
+const multiCount = document.getElementById("multi-count");
+const multiCost = document.getElementById("multi-cost");
 const buyAutoClick = document.getElementById("autoBtn");
-const autoCount = document.querySelector(".auto-count");
-const autoCost = document.querySelector(".auto-cost");
-const donutValue = document.querySelector(".donut-value");
+const autoCount = document.getElementById("auto-count");
+const autoCost = document.getElementById("auto-cost");
+const donutValue = document.getElementById("donut-value");
+const resetGame = document.getElementById("resetBtn");
+
+//Can't figure out how to implement
+// const donutsPerSecond = document.getElementById("DpS");
 
 
 var donutMaker = new DonutShop();
@@ -23,8 +27,11 @@ buyMultiplier.addEventListener('click', function(){
 
 buyAutoClick.addEventListener('click', function(){
     donutMaker.addAutoClick();
-    
-   
+    updateDom();
+});
+
+resetGame.addEventListener('click', function(){
+    donutMaker.resetStats();
     updateDom();
 });
 
@@ -35,6 +42,7 @@ function autoClick(){
 };
 
 
+
 function updateDom(){
     donutCount.innerText = Math.round(donutMaker.getDonutCount());
     multiCount.innerText = donutMaker.getMultiClickCount();
@@ -42,11 +50,41 @@ function updateDom(){
     autoCount.innerText = donutMaker.getAutoClickCount();
     autoCost.innerText = donutMaker.getAutoClickCost();
     donutValue.innerText = donutMaker.getDonutValue();
+    UpdateButtons();
 };
 
 function UpdateButtons(){
-    autoButton.disabled = !(donutMaker.getTotalDonuts() >= donutMaker.getAutoClickerCost());
-    multButton.disabled = !(donutMaker.getTotalDonuts() >= donutMaker.getMultiplierCost());
+    autoBtn.disabled = !(donutMaker.getDonutCount() >= donutMaker.getAutoClickCost());
+    multiBtn.disabled = !(donutMaker.getDonutCount() >= donutMaker.getMultiClickCost());
+
 }
 
-document.getbuttonbyid("multiplier button").innertext = "Buy For: " + donutmaker.getMultClickCost();
+
+
+//Opening Model
+
+var modalBtns = document.querySelectorAll('.modal-open');
+
+modalBtns.forEach(function(btn){
+    btn.onclick = function() {
+        var modal = btn.getAttribute('data-modal');
+
+        document.getElementById(modal).style.display = "block";
+    };
+});
+
+var closeBtn = document.querySelectorAll('.modal-close');
+
+closeBtn.forEach(function(btn){
+    btn.onclick = function(){
+        var modal = btn.closest(".modal").style.display = 'none';
+    };
+});
+
+window.onclick = function(e){
+    if(e.target.className == 'modal'){
+        e.target.style.display = 'none';
+    }
+}
+
+ 
